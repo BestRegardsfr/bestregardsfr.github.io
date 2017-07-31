@@ -19,6 +19,16 @@
 	
 	li{line-height: 2em;}
 
+	.panel-default{
+		border-width: 1pt;
+		border-color:rgba(19, 34, 145,0.5);
+	}
+
+	.panel-default>.panel-heading{
+		background-color: white;
+
+	}
+
 /* SECTION PRINCIPALE*/
 
 	@media (min-width: 768px){

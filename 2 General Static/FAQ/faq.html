@@ -1,0 +1,379 @@
+<!-- BLOCK HEAD -->
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Best Regards scanne les signatures de vos emails reçus pour extraire les informations de vos contacts et les classer dans un tableau simple dans le Cloud">
+        <meta name="author" content="Best regards">
+
+        <title>Best Regards - Extraction automatique d'informations Contacts depuis vos emails</title>
+
+        <!-- CSS -->
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="../../Assets/img/favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,300italic,400italic,600italic" rel="stylesheet">
+
+        <!-- MAIN CUSTOM CSS -->
+        <link href="../../Assets/css/main-custom.css" rel="stylesheet">
+
+        <!-- Script -->
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+       
+    <!-- BLOCK CUSTOM CSS CGU -->
+        <link href="../../Assets/css/cgu-custom.css" rel="stylesheet">
+    <!-- END BLOCK CUSTOM CSS CGU -->
+
+        <!--[if lt IE 9]
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        [endif]-->      
+        
+    </head>
+    <body>
+<!-- END BLOCK HEAD -->
+
+<!-- BLOCK NAV MAIN -->
+        <nav id="Nav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+            <!-- BLOCK THIS NAV BUTTONS - GENERAL STATIC -->
+                <div class="navbar-header pull-left">  
+                    <a href="www.bestregards.pro"><img class="navbar-brand page-scroll" src="../../Assets/img/logo Beta.svg" alt="Logo"></a>
+                </div>
+                <div class="navbar-header pull-right">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <button type="button" class="btn btn-default navbar-btn" href="www.bestregards.pro">CREER UN COMPTE</button>
+                        </li>                     
+                        <li>
+                            <a class="page-scroll" href="https://test.bestregards.pro/login">Connexion</a>
+                        </li>                        
+                    </ul>                    
+                </div>
+            <!-- BLOCK THIS NAV BUTTONS - GENERAL STATIC -->
+            </div> 
+        </nav>
+<!-- END BLOCK NAV MAIN -->
+
+<!-- BLOCK CONTENT -->
+
+    <!-- BLOCK SECTION TITRE -->
+	    <section id="principale" class="principale mediumsize">
+	            <div class="container">
+	                <div class="row">  
+	                    <div class="col-sm-12">
+	                        <div class="section content">
+	                            <div class="section-content-inner">
+	                                <h1>F.A.Q</h1>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	    </section>
+    <!--END BLOCK SECTION TITRE -->
+	    <section id="faq" class="">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <div class="container-fluid backgroundtable">
+	                        <h3>Securité et Confidentialité des données</h3>
+							    <div class="panel-group" id="faqAccordion">
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Mes Contacts sont-ils utilisés à des fins commerciales ?</a>
+							              		</h4>
+							            </div>
+							            <div id="question0" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                     <h5><span class="label label-primary">Non</span></h5>
+													<p>
+													    Nous nous engageons dans nos <a class="text-primary" href="https://www.bestrgards.pro/cgu">Conditions Générales d'Utilisation</a> à ne pas utiliser les
+													    données de vos contacts à des fins commerciales ou marketing.
+													</p>
+													<p>
+													    Nous pourrons mettre en place des campagnes de parrainage dans le futur
+													    mais vous serez toujours libre d’y participer ou non.
+													</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Un humain lit-il mes emails ?</a>
+							              	</h4>
+							            </div>
+							            <div id="question1" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                     <h5><span class="label label-primary">Non</span></h5>
+													<p>
+													    Best Regards, est un algorithme basé sur l'intelligence artificielle. Il se
+													    connecte à votre boite email, et identifie dans chacun des courriers reçus
+													    les informations relatives à vos contacts (nom, prénom, adresse e-mail,
+													    téléphone, fonction,...).
+													</p>
+													<p>
+													    Dans la version Béta, nos équipes interviennent pour vérifier la cohérence
+													    des extractions réalisées par notre algorithme, sans pour autant ouvrir vos
+													    emails.
+													</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">"Best Regards," risque-t-il de supprimer mes emails ?</a>
+							              </h4>
+
+							            </div>
+							            <div id="question2" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                     <h5><span class="label label-primary">Non</span></h5>
+							                     <p> Nous nous connectons à votre boite email en lecture seule.</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Comment sont sécurisés mes identifiants et mes contacts ? </a>
+							              </h4>
+
+							            </div>
+							            <div id="question3" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                     <h5><span class="label label-primary">Plusieurs choses</span></h5>
+												<p>
+												    Xxx
+												</p>
+												<p>
+												    Vos données sont hébergées en <strong> France</strong> sur un serveur privé, hébergé par OVH.
+												</p>                 
+							                </div>
+							            </div>
+							        </div>
+	                        <h3>Fonctionnalités (Béta)</h3>		        
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Ma boite email est-elle éligible à la technologie "Best Regards,"?</a>
+							              		</h4>
+							            </div>
+							            <div id="question5" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+												<p>
+												    Pour l'instant "Best Regards," peut se connecter aux boites emails
+												    hébergées par Gmail et Outlook.
+												</p>
+												<p>
+												    <em>
+												        NB : Votre adresse email peut se terminer le nom de votre entreprise et
+												        être hébergé par Gmail ou Outlook.
+												    </em>
+												</p>
+												<p>
+												Le meilleur moyen pour savoir si votre boite est éligible est de <strong>créer un compte </strong>ici :    <a class="text-primary" href="https://www.bestregards.pro/">https://www.bestregards.pro</a>
+												</p>
+												<p>
+												    Nous ne gérons pas encore les messageries hébergées par OVH.
+												</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question6">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Comment lancer une première connexion à "Best Regards,"?</a>
+							              </h4>
+							            </div>
+							            <div id="question6" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+												<p>
+												Entrez votre adresse email sur la page d'accueil, ici :    <a href="https://www.bestregards.pro/">https://www.bestregards.pro</a>
+												</p>
+												<p>
+												    Si votre boite email est éligible, vous serez redirigés vers une demande
+												    d’authentification de la part de votre hébergeur de messagerie (Gmail,
+												    Outlook,...). Dès la première connexion, un scan se lance sur votre boite
+												    email pour extraire les contacts des deux mois précédents la première
+												    connexion.
+												</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question7">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Je souhaite ajouter, retirer des colonnes, comment faire ?</a>
+							              </h4>
+
+							            </div>
+							            <div id="question7" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                    <p>Vous pouvez cocher et décocher les colonnes qui vous intéressent à tout moment</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question8">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">A quoi sert la fonction <span class="glyphicon glyphicon-envelope text-primary"></span> Scan ?</a>
+							              </h4>
+
+							            </div>
+							            <div id="question8" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                    <p>La fonction <span class="glyphicon glyphicon-envelope text-primary"></span> scan permet de lancer une extraction sur la période que vous désirez.
+												Les données extraites à la suite de ce scan apparaitront en complément des données déjà présentes dans votre base contacts.
+							                    </p>
+												<p>
+												Une fois le scan terminé vous recevez un email pour venir voir le résultat.
+							                    </p>
+												<p>
+												Vous pouvez arrêter un scan en cours à tout moment grâce au bouton stop <span class="glyphicon glyphicon-stop text-primary"></span>
+												</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question9">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Combien de temps dure un scan ?</a>
+							              		</h4>
+							            </div>
+							            <div id="question9" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                     <h5><span class="label label-primary">C’est très variable !</span></h5>
+
+							                    <p> De quelques secondes à plusieurs dizaines de minutes.
+							                    </p>
+												<p>
+												Tout dépend du nombre d’email à scanner (donc de la période scannée et de la densité d’emails reçus)
+												</p>
+												<p>
+												Vous recevrez un email dès la fin du scan.
+
+							                        </p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question10">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Comment exporter mes données de « Best Regards, »?</a>
+							              </h4>
+
+							            </div>
+							            <div id="question10" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+												<p>
+												    Vous pouvez exporter vos données en CSV et Excel ou tout simplement les
+												    copier pour les coller grâce aux trois boutons à côté du tableau de contact.
+												</p>
+												<div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5" tabindex="0" aria-controls="persontable" href="#"><span>Copy</span></a><a class="btn btn-default buttons-csv buttons-html5" tabindex="0" aria-controls="persontable" href="#"><span>CSV</span></a><a class="btn btn-default buttons-excel buttons-html5" tabindex="0" aria-controls="persontable" href="#"><span>Excel</span></a></div>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question11">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Puis-je créer plusieurs comptes ?</a>
+							              </h4>
+
+							            </div>
+							            <div id="question11" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                     <h5><span class="label label-primary">Oui</span></h5>
+							                     <p>Vous pouvez créer autant de compte que d’adresse email dans la version Béta</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question12">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Comment supprimer mon compte ?</a>
+							              </h4>
+							            </div>
+							            <div id="question12" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+												<p>
+											    Cliquez sur <span class="glyphicon glyphicon-user text-primary"></span> <em>le nom de votre compte</em>. Puis sur « supprimer
+											    mon compte ».
+												</p>
+							                </div>
+							            </div>
+							        </div>
+	                        <h3>Problèmes</h3>	
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question13">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">Lors de ma première connexion, le message suivant apparait « Votre hébergeur email n'est pas supporté ». <br>Que signifie ce message?</a>
+							              </h4>
+
+							            </div>
+							            <div id="question13" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                    <p>Ce message signifie que vos emails ne sont ni hébergés par Gmail, ni par Outlook.<br> Nous travaillons à l’intégration de toutes les boites emails existantes, vous recevrez un email lorsque nous serons prêts !</p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="panel panel-default ">
+							            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question14">
+							                 <h4 class="panel-title">
+							                    <a href="#" class="ing">« Best Regards, » scanne mes emails depuis plus d’une heure, le message d’attente ne disparait pas et je n’ai toujours pas reçu l’email de fin de scan. <br>Que se passe-t-il ?</a>
+							              </h4>
+
+							            </div>
+							            <div id="question14" class="panel-collapse collapse" style="height: 0px;">
+							                <div class="panel-body">
+							                     <h5><span class="label label-primary">A priori ça a planté… :)</span></h5>
+
+							                    <p>Contactez-nous à <a href="mailto:bonjour@bestregards.pro" class="text-primary">bonjour@bestregards.pro</a> pour nous indiquer le problème et nous le résoudrons dans les plus brefs délais.</p>
+							                </div>
+							            </div>
+							        </div>
+		
+							    </div>
+							    <!--/panel-group-->
+	                    	</div>
+	    </section>
+<!-- END BLOCK CONTENT -->
+
+<!-- BLOCK FOOTER -->
+    <footer>
+        <div class="container footer">
+            <p>&copy;2017 Best regards, Tous droits reservés</p>
+            <ul class="list-inline">
+                <li>
+                    <a class="text-primary" href="https://www.bestregards.pro/cgu">Conditions Générales d'Utilisation </a>
+                </li>
+				<li>
+                    <span class="text-primary">|</span>
+                </li>
+                <li>
+                    <a class="text-primary" href="https://www.bestregards.pro/privacy">Politique de Confidentialité </a>
+                </li>
+				<li>
+                    <span class="text-primary">|</span>
+                </li>
+
+                <li>
+                    <a class="text-primary" href="https://www.bestregards.pro/faq">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+	</body>
+	</hmtl>
+<!-- BLOCK FOOTER -->
