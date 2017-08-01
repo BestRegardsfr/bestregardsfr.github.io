@@ -31,8 +31,11 @@
     <!-- BLOCK CUSTOM CSS CGU -->
         <link href="../Assets/css/landing-custom.css" rel="stylesheet">
         <link href="../Assets/css/login-custom.css" rel="stylesheet">
-
     <!-- END BLOCK CUSTOM CSS CGU -->
+	<!-- BLOCK GOOGLE HEAD-->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+	<!-- END BLOCK GOOGLE HEAD-->
 
         <!--[if lt IE 9]
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -84,13 +87,13 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <form id="login-panel" action="https://test.bestregards.pro/register/" method="post" role="form" style="display: block;">
-                                                    <div class="form-group">
-                                                        <input type="email" name="email" id="email-registration-landing" tabindex="1" class="form-control" placeholder="Votre adresse email">
-                                                    </div>
-                                                    <div class="form-group btn-register">
-                                                        <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn-register" value="SE CONNECTER">
-                                                </form>
+	                                                <div class="form-group btn btn-register">
+														<span  class="btn-responsive"><img style="width:7%" src="../Assets/img/Google_Logo.png"> SE CONNECTER AVEC GOOGLE</span>
+	                                                </div>
+	                                                <div class="hr-label"><span class="hr-label__text">ou</span></div>
+	                                                <div class="form-group btn btn-register" style="display: block">
+		                                                <span  class="btn-responsive"><img  style="width:20%" src="../Assets/img/logo_outlook.png"> SE CONNECTER AVEC OUTLOOK</span>
+	                                                </div>
                                             </div>
                                         </div>
                                     </div>
