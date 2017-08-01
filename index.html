@@ -22,7 +22,7 @@
     	<link href="Assets/css/main-custom.css" rel="stylesheet">
 
         <!-- Script -->
-    	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
@@ -41,23 +41,30 @@
 <!-- END BLOCK HEAD -->
 
 <!-- BLOCK NAV MAIN -->
-        <nav id="Nav" class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <!-- BLOCK THIS NAV BUTTONS - LANDING -->
-                <div class="navbar-header pull-left">  
-                    <a href="https://www.bestregards.pro"><img class="navbar-brand page-scroll" src="Assets/img/logo Beta.svg" alt="Logo"></a>
-                </div>
-                <div class="navbar-header pull-right">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a class="page-scroll" href="https://test.bestregards.pro/login">Connexion</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- BLOCK THIS NAV BUTTONS - LANDING --> 
-            </div> 
-        </nav>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid-nav">
+        <div class="navbar-header">
+          <a href="https://www.bestregards.pro"><img class="navbar-brand page-scroll" src="Assets/img/logo Beta.svg" style="height:70px" alt="Logo"></a>
+          <button type="button" class="navbar-toggle btn-primary collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <!-- BLOCK THIS NAV BUTTONS - CONTACTS -->
+            <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li>
+                    <a class="navbar-right" href="https://test.bestregards.pro/login">Connexion</a> 
+                </li>
+              </ul>
+            </div>
+        <!-- END BLOCK THIS NAV BUTTONS - CONTACTS -->
+    </div>
+    </nav>  
 <!-- END BLOCK NAV MAIN -->
+
 
 <!-- BLOCK CONTENT -->
         <section id="principale" class="principale">

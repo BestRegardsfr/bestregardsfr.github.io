@@ -1,0 +1,192 @@
+<!-- BLOCK HEAD -->
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Best Regards scanne les signatures de vos emails reçus pour extraire les informations de vos contacts et les classer dans un tableau simple dans le Cloud">
+        <meta name="author" content="Best regards">
+
+        <title>Best Regards - Extraction automatique d'informations Contacts depuis vos emails</title>
+
+        <!-- CSS -->
+    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" rel="stylesheet">
+    	<link rel="icon" type="image/png" href="Assets/img/favicon.png" />
+    	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,300italic,400italic,600italic" rel="stylesheet">
+
+        <!-- CUSTOM CSS MAIN -->
+    	<link href="../Assets/css/main-custom.css" rel="stylesheet">
+
+        <!-- Script -->
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+    <!-- BLOCK CUSTOM CSS et JS CONTACTS PAGE -->
+        <link href="../Assets/css/contacts-custom.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/buttons/1.2.4/css/buttons.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.3.2/css/colReorder.bootstrap.min.css ">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/1.4.2/css/scroller.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.0/css/select.bootstrap.min.css ">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+        <script src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.bootstrap.min.js "></script>
+        <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js "></script>
+        <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js "></script>
+        <script src="https://cdn.datatables.net/colreorder/1.3.2/js/dataTables.colReorder.min.js "></script>
+        <script src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js "></script>
+        <script src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js "></script>
+        <script src="https://cdn.datatables.net/scroller/1.4.2/js/dataTables.scroller.min.js "></script>
+        <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js "></script>
+        <script src="../Assets/js/custom-contacts.js"></script>
+    <!-- END BLOCK CUSTOM CSS et JS CONTACTS PAGE -->
+
+        <!--[if lt IE 9]
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        [endif]-->      
+    	
+    </head>
+
+    <body>
+<!-- END BLOCK HEAD -->
+
+<!-- BLOCK NAV MAIN -->
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid-nav">
+	    <div class="navbar-header">
+	      <a href="https://www.bestregards.pro"><img class="navbar-brand page-scroll" src="../Assets/img/logo Beta.svg" style="height:70px" alt="Logo"></a>
+	      <button type="button" class="navbar-toggle btn-primary collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	    </div>
+	    <!-- BLOCK THIS NAV BUTTONS - CONTACTS -->
+		   	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+				  <li><a href="{% url 'contacts:index' %}"><span class="glyphicon glyphicon-th-list"></span>  Contacts </a>
+				  </li><li><a href="{% url 'contacts:scan' %}"><span class="glyphicon glyphicon-envelope"></span> Scan </a>
+				  </li><li><a href="{% url 'profil:index' %}"><span class="glyphicon glyphicon-user"></span> {{ user.get_username}} </a>
+				  </li><li><a href="{% url 'logout' %}" class="navbar-link">Log out</a></li>
+		      </ul>
+		    </div>
+		<!-- END BLOCK THIS NAV BUTTONS - CONTACTS -->
+  	</div>
+	</nav>	
+<!-- END BLOCK NAV MAIN -->
+
+<!-- BLOCK CONTENT -->
+	<section class="backgroundtable">
+	    <div class="container-fluid">
+			<!-- BLOCK USER TOOLS -->
+				<div class="row" style="display:flex">
+				 	<div class="usertools">
+						<script> $(document).ready( function () {
+							  $(".dropdown-menu li a").click(function(){
+							    
+							    $(".btn:nth-child(2)").text($(this).text());
+							     $(".btn:nth-child(2)").val($(this).text());
+	    						});
+								} );
+						</script>
+					</div>	
+					<div id="fieldchoice" class="usertools">
+						<button class="btn usertools-btn" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i>&nbsp;Afficher/Masquer</button>
+					</div>								
+				</div>
+				<div class="row">
+					<div id="check-list-box-full" class="col-xs-12 initiallyHidden">
+			            <div style="max-height: 300px;overflow: auto;">
+			            	<ul id="check-list-box" class="list-inline checked-list-box">
+			                  <li class="list-inline-item toggle-vis" data-column="0">Entreprise</li>
+			                  <li class="list-inline-item toggle-vis" data-column="1">Email</li>
+			                  <li class="list-inline-item toggle-vis" data-column="2">Prenom et Nom</li>
+			                  <li class="list-inline-item toggle-vis" data-column="3">Fonction</li>
+			                  <li class="list-inline-item toggle-vis" data-column="4">Téléphone Principal</li>
+			                  <li class="list-inline-item toggle-vis" data-column="5">Telephones secondaires/Fax</li>
+			               	  <li class="list-inline-item toggle-vis" data-column="6">Adresse</li>
+			               	  <li class="list-inline-item toggle-vis" data-column="7">Site</li>            	  
+			                </ul>
+			            </div>
+		        	</div>
+		        	<script> 
+						$("#fieldchoice").click(function(){
+						    var $target = $('#check-list-box-full'),
+						        $toggle = $('#fieldchoice');
+						    	$target.slideToggle(500, function() {
+						  });
+						});
+					</script>
+				</div>
+			<!-- END BLOCK USER TOOL -->
+        	<!-- BLOCK TABLEAU-->
+        		<!-- BLOCK CONFIG-->
+					<script> 
+					$(document).ready( function () {
+	    						
+	    					var table = $('#Tableau_contact').DataTable({
+	    							buttons: [
+	    							{extend:'csv', text:'Export CSV', className: 'btn-primary'}, 'excel','pdf'],
+	    							responsive:true,
+	    							"dom":'<f>t<"#tableaufooter.row"<"col-xs-7"pB><"col-xs-5 text-center"li>>',
+	    							"language": {url: 'https://cdn.datatables.net/plug-ins/1.10.13/i18n/French.json'},
+									"oLanguage": {"sSearch": '<i class="glyphicon glyphicon-search"></i>'},
+									"scrollX": true,
+									fixedHeader: true,
+	    							 });
+
+								    $('li.toggle-vis').on( 'click', function (e) {
+								        e.preventDefault();
+								 
+								        // Get the column API object
+								        var column = table.column( $(this).attr('data-column') );
+								 
+								        // Toggle the visibility
+								        column.visible( ! column.visible() );
+								    } );    							
+
+	    						 });
+					</script> 
+				<!-- END BLOCK CONFIG-->
+				<table id="Tableau_contact" class="table dataTable no-footer" cellpadding="0" cellspacing="0" border="0" role="grid" aria-describedby="persontable_info">
+	
+				<thead ><tr><th >
+	            company
+	            </th><th >
+	            email
+	            </th><th >
+	            name
+	            </th><th >
+	            fonction
+	            </th><th >
+	            phone
+	            </th><th >
+	            alt.phone
+	            </th><th >
+	            adresse
+	            </th><th >
+	            url
+	            </th></tr></thead><tbody ><tr><td ></td><td >dadaparadis@orange.fr</td><td >Biocoop Dada</td><td >Directeur Adjoint</td><td >01 40 79 43 51</td><td ></td><td >29 rue de Paradis PARIS 75010</td><td ></td></tr><tr><td >Maison-Bio-Sain</td><td >sophie.soulier@maison-bio-sain.com</td><td >Sophie Soulier</td><td >Directrice Générale</td><td >06 72 86 15 51</td><td ></td><td >[LOGO Maison Bio SainV2-05] 4, rue de Rennes – Bâtiment D6 94 589 Rungis Cedex</td><td ></td></tr><tr><td >Nrj-Formation</td><td >rmessaoudi@nrj-formation.fr</td><td >Rachid Messaoudi</td><td ></td><td >01 40 36 09 20</td><td ></td><td ></td><td ></td></tr><tr><td >Cbi</td><td >bhorbeek@cbi.eu</td><td >Horbeek  B. (Bente)</td><td ></td><td ></td><td ></td><td ></td><td >http://www.cbi.eu</td></tr><tr><td >Spas-Expo</td><td >sgangloff@spas-expo.com</td><td >Sara Gangloff</td><td >Responsable du réseau Zen &amp; Bio</td><td >01 45 56 09 09</td><td ></td><td ></td><td ></td></tr><tr><td ></td><td >lesdemoisellesdemontpellier@gmail.com</td><td >Lélia Poujol</td><td ></td><td >06 37 47 75 29</td><td ></td><td >34000 Montpellier</td><td ></td></tr><tr><td >Veggieworld</td><td >swantje@veggieworld.fr</td><td >Swantje Tomalak</td><td ></td><td ></td><td ></td><td ></td><td >www.veggieworld.fr www.veggieworld.de www.wellfairs.de</td></tr><tr><td >Naturalia</td><td >fabt@naturalia.fr</td><td >Abt Florine</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Ecolomag</td><td >cathy@ecolomag.fr</td><td >Cathy Guichet</td><td ></td><td >04 94 77 45 46</td><td >[&#39;04 98 05 12 37&#39;, &#39;03 94 62 78 94&#39;]</td><td ></td><td >www.ecolomag.fr</td></tr><tr><td ></td><td >phenicia2@aol.com</td><td >Sonia Karalekian</td><td ></td><td >06 66 14 24 68</td><td >[&#39;04 42 69 82 58&#39;]</td><td ></td><td ></td></tr><tr><td >Kitchentrotter</td><td >pierre@kitchentrotter.com</td><td >Pierre-François Lotiron</td><td ></td><td >06 79 29 56 13</td><td ></td><td >14 rue Taylor - 75010 Paris</td><td ></td></tr><tr><td >Wildcrisps</td><td >louis.scellier@wildcrisps.com</td><td >Louis Scellier</td><td ></td><td >06 59 31 18 60</td><td >[&#39;02 00 44 01 40&#39;, &#39;02 82 00 44 01&#39;]</td><td >| RCS Nanterre - Siret 82004401400018                                      | | 37 rue Jules Guesde, 92300 Levallois-Perret                              |</td><td ></td></tr><tr><td >Natureo-Bio</td><td >rosane.gail@natureo-bio.fr</td><td >Rosane Gail</td><td >Chef de produits Marque de Distributeur</td><td >01 64 55 80 79</td><td >[&#39;01 69 26 05 86&#39;]</td><td >1 rue Belette 91410 DOURDAN</td><td >www.natureo-bio.fr www.facebook.com/natureobio</td></tr><tr><td >Finestraloubio</td><td >timaia.schmitz@finestraloubio.fr</td><td >Timaïa Schmitz</td><td >Service R&amp;D et qualité</td><td >04 13 21 11 20</td><td ></td><td >04100 MANOSQUE</td><td ></td></tr><tr><td >Synabio</td><td >charlespernin@synabio.com</td><td >Charlespernin@Synabio.Com</td><td ></td><td >01 48 04 01 49</td><td >[&#39;06 13 40 29 92&#39;, &#39;01 48 04 01 64&#39;]</td><td >_16 rue Montbrun 75014 Paris_</td><td ></td></tr><tr><td >Haudecoeur</td><td >laurent.dupuy@haudecoeur.fr</td><td >Laurent Dupuy</td><td ></td><td >01 48 11 15 55</td><td ></td><td >60, rue Emile Zola 93120 La Courneuve</td><td ></td></tr><tr><td >Jiminis</td><td >bastien@jiminis.com</td><td >Bastien Rabastens</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Nutritionetnature</td><td >frederic.terrisson@nutritionetnature.com</td><td >Frederic Terrisson</td><td >Directeur Réseau Spécialisé France</td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Ekibio</td><td >didier.perreol@ekibio.fr</td><td >Didier Perreol</td><td >  PDG - Fondateur</td><td ></td><td ></td><td >  07340 Peaugres</td><td >  www.ekibio.fr</td></tr><tr><td >Ercabio</td><td >chamard@ercabio.org</td><td >Corentin Hamard</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Kuehne-Nagel</td><td >nicolas.de-oliveira@kuehne-nagel.com</td><td >De Oliveira  Nicolas / Kuehne + Nagel / Run Fo</td><td >Affréteur Créteil</td><td >01 49 80 90 97</td><td ></td><td >20-22 chemin des Marais 94000 Créteil</td><td >www.kuehne-nagel.fr/road</td></tr><tr><td >Synabio</td><td >synabio@synabio.com</td><td >Marion Levêque - Synabio</td><td ></td><td ></td><td ></td><td >16 rue Montbrun 75014 Paris</td><td >www.synabio.com</td></tr><tr><td >Novancia</td><td >ggauthier@novancia.fr</td><td >Georges-Pierre Gauthier</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Diamantltd</td><td >export2@diamantltd.com.ua</td><td >Дмитрий Коломиец</td><td >International relations manager:
+				</td><td >+380 95 376 3515</td><td >[&#39;+380 5326 77355&#39;]</td><td ></td><td >https://www.avast.com/antivirus</td></tr><tr><td >Bienmanger</td><td >victoire.tolot@bienmanger.com</td><td >Victoire Tolot</td><td >Chef de Produit Achats</td><td >04 66 32 13 32</td><td ></td><td ></td><td ></td></tr><tr><td >Assotlmc</td><td >aurelie@assotlmc.net</td><td >Aurélie Dufourmantelle</td><td ></td><td >06 81 75 36 65</td><td ></td><td ></td><td ></td></tr><tr><td >Philibertsavours</td><td >b.talpied@philibertsavours.com</td><td >Bruno Talpied</td><td ></td><td >03 85 23 80 70</td><td >[&#39;03 85 31 57 54&#39;]</td><td >   philibertsavours.com                             01290 Crottet</td><td ></td></tr><tr><td >Axefruit</td><td >rspir@axefruit.net</td><td >Rosalie Spir</td><td >Reponsable commerciale Axe Fruit</td><td >04 88 66 08 72</td><td ></td><td ></td><td ></td></tr><tr><td >Moulinmarion</td><td >mariapelletier@moulinmarion.fr</td><td >Maria Pelletier</td><td ></td><td >03 85 23 98 50</td><td ></td><td >                37, impasse du Moulin Gaillard                    01290 Saint-Jean-sur-Veyle</td><td >                       www.moulin-marion.fr</td></tr><tr><td >Digiflex-Unipackaging</td><td >vincent-catala@digiflex-unipackaging.com</td><td >Vincent Catala</td><td >Digiflex Manager</td><td ></td><td ></td><td ></td><td >www.digiflexprint.com</td></tr><tr><td >Porcbiologique</td><td >chamard@porcbiologique.fr</td><td >Corentin Hamard</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Chevaliers-Argouges</td><td >asoster@chevaliers-argouges.com</td><td >Aurelie Soster</td><td >Responsable Qualité</td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Tipiak</td><td >rose-nadine.bonneau@tipiak.fr</td><td >Rose-Nadine.Bonneau@Tipiak.Fr</td><td >Assistante Administration des Ventes Industrie RHF</td><td >02 40 32 48 06</td><td >[&#39;02 40 32 11 16&#39;]</td><td ></td><td ></td></tr><tr><td >Comptaconsulting</td><td >michelle@comptaconsulting.com</td><td >Michelle - Apelbaum Consulting</td><td ></td><td >01 42 60 86 75</td><td >[&#39;01 42 60 45 39&#39;]</td><td >75001 PARIS</td><td ></td></tr><tr><td >Solutions-Packaging</td><td >a.salomon@solutions-packaging.fr</td><td >Arnaud Salomon</td><td >Directeur Production                                                                    </td><td >06 30 23 27 61</td><td ></td><td ></td><td ></td></tr><tr><td >Lesfruitsdetendus</td><td >charles@lesfruitsdetendus.fr</td><td >Charles D&#39;Oléon</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Ecocert</td><td >jerome.vaquier@ecocert.com</td><td >Vaquier Jérôme</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Vitacuire</td><td >karine.bacconnet@vitacuire.com</td><td >Karine Bacconnet</td><td ></td><td >04 78 04 70 47</td><td >[&#39;04 78 31 51 34&#39;]</td><td >14, rue Jean Jaurès 69330 MEYZIEU</td><td ></td></tr><tr><td >Spas-Expo</td><td >alegoff@spas-expo.com</td><td >Anne Le Goff</td><td >Bien cordialement,</td><td >01 77 37 63 35</td><td >[&#39;01 45 56 09 09&#39;, &#39;01 45 56 09 09&#39;]</td><td ></td><td ></td></tr><tr><td >My-Healthy-Food</td><td >meryem.bourbaa@my-healthy-food.fr</td><td >Meryem Bourbaa</td><td ></td><td >06 30 21 83 64</td><td ></td><td ></td><td ></td></tr><tr><td ></td><td >orel.louzoune@gmail.com</td><td >Orel L</td><td ></td><td >06 27 58 32 33</td><td ></td><td ></td><td ></td></tr><tr><td >Ziegler-Organic</td><td >clarissa.krebs@ziegler-organic.de</td><td >Clarissa Krebs</td><td >Sales - Verkauf</td><td ></td><td ></td><td >Dr.-Hohenner-Str. 4 D-95632 Wunsiedel</td><td ></td></tr><tr><td ></td><td >afdiaglicence@gmail.com</td><td >Afdiaglicence Afdiaglicence</td><td ></td><td >01 56 08 08 21</td><td ></td><td ></td><td ></td></tr><tr><td ></td><td >morvanbio@orange.fr</td><td >Morvan Bio</td><td >Morvan bio</td><td ></td><td ></td><td >14 Route de Château-Chinon 71400 AUTUN</td><td ></td></tr><tr><td >Natureetpartage</td><td >virginie@natureetpartage.fr</td><td >Nature Et Partage - Virginie</td><td ></td><td >05 56 61 91 05</td><td >[&#39;05 56 61 76 75&#39;]</td><td ></td><td ></td></tr><tr><td >Salessucres</td><td >mathilde.gaugry@salessucres.fr</td><td >Mathilde Gaugry</td><td >Acheteur / Approvisionneur</td><td >01 48 82 51 43</td><td ></td><td >820 rue Marcel Paul</td><td ></td></tr><tr><td >Epicerie-Oh</td><td >olivia@epicerie-oh.com</td><td >Olivia Coutire</td><td ></td><td >03 88 22 24 23</td><td ></td><td >67000 Strasbourg</td><td >olivia@epicerie-oh.com</td></tr><tr><td >Greenweez</td><td >cbrimbeuf@greenweez.com</td><td >Christelle Brimbeuf</td><td >Responsable achats et catalogue__</td><td >04 86 13 91 12</td><td ></td><td >301 rue des Marais - 74410 Saint Jorioz</td><td ></td></tr><tr><td >Pain-Belledonne</td><td >bruno.anquetil@pain-belledonne.com</td><td >Bruno Anquetil</td><td ></td><td >04 79 25 37 80</td><td ></td><td ></td><td ></td></tr><tr><td >Prochimia</td><td >achaigneau@prochimia.fr</td><td >Chaigneau Antoine</td><td >Responsable Commercial</td><td >06 47 57 70 27</td><td >[&#39;02 40 36 35 69&#39;]</td><td ></td><td ></td></tr><tr><td >Prochimia</td><td >msaupin@prochimia.fr</td><td >Proass Assistante</td><td >Assistante commerciale
+				</td><td >02 40 36 35 69</td><td >[&#39;02 40 33 76 87&#39;]</td><td >Rue de la Grande Perrière
+				 44330 VALLET
+				</td><td ></td></tr><tr><td >Sources-Restaurants</td><td >jonathan@sources-restaurants.com</td><td >Jonathan@Sources-Restaurants.Com</td><td ></td><td >09 82 29 59 40</td><td >[&#39;06 61 93 53 90&#39;]</td><td >16 rue de la Michodière
+				 75002 Paris
+				</td><td ></td></tr><tr><td >Nature-Aliments</td><td >schapron@nature-aliments.com</td><td >S. Chapron</td><td ></td><td >02 40 73 65 97</td><td ></td><td >Zac de la Brosse – 3 rue Nicolas Appert 44400 REZE</td><td ></td></tr><tr><td >PARECO EST EUROPE</td><td >pareco.iuliia@gmail.com</td><td >Sperber Iuliia</td><td ></td><td >01 40 59 43 22</td><td >[&#39;01 40 59 44 63&#39;, &#39;06 10 98 44 45&#39;]</td><td >58 rue Letellier 75015 Paris</td><td >www.parinter.com www.pareco-est-europe.fr</td></tr><tr><td >Cinqsans</td><td >marie.garcia@cinqsans.com</td><td >Marie Garcia</td><td ></td><td >06 72 22 01 74</td><td ></td><td ></td><td ></td></tr><tr><td ></td><td >hortense.bourgois@gmail.com</td><td >Hortense Bourgois</td><td >Co Founder &amp; CEO</td><td >06 29 66 11 00</td><td ></td><td ></td><td ></td></tr><tr><td ></td><td >boulognegallieni@gmail.com</td><td >Boulogne Gallieni</td><td ></td><td >06 12 32 09 07</td><td >[&#39;06 19 49 41 91&#39;]</td><td ></td><td ></td></tr><tr><td >Etoileroutiere</td><td >mbonnaire@etoileroutiere.fr</td><td >Mireille Bonnaire</td><td ></td><td >02 43 48 26 16</td><td >[&#39;02 43 48 26 09&#39;]</td><td >rue des Frères Chappe 72200 LA FLECHE</td><td ></td></tr><tr><td >Latelierdeslilas</td><td >achaillat@latelierdeslilas.com</td><td >Alexandra Chaillat</td><td ></td><td >06 58 14 36 41</td><td >[&#39;01 42 85 72 14&#39;]</td><td ></td><td >www.latelierdeslilas.com</td></tr><tr><td >Schneider-Transport</td><td >dsimoes@schneider-transport.com</td><td >Simoes  David</td><td >FR-93612 Aulnay-sous-Bois Cedex</td><td >01 48 14 29 15</td><td >[&#39;01 48 14 29 28&#39;]</td><td >Boite Postale 672</td><td ></td></tr><tr><td >Groupe-Casino</td><td >ybouvin@groupe-casino.fr</td><td >Bouvin Yvette</td><td ></td><td >01 78 68 74 43</td><td ></td><td >123 Quai Jules Guesde 94400 Vitry sur Seine</td><td ></td></tr><tr><td >Kuehne-Nagel</td><td >martine.queval@kuehne-nagel.com</td><td >Queval  Martine / Kuehne + Nagel / Run Fo</td><td >Affreteur Créteil Kuehne + Nagel Road</td><td >01 49 80 91 89</td><td ></td><td >20-22 chemin des Marais 94000 Créteil</td><td ></td></tr><tr><td >Atria-Gr</td><td >m.fardeau@atria-gr.com</td><td >Muriel Fardeau</td><td ></td><td >02 53 39 80 39</td><td >[&#39;02 40 05 08 24&#39;]</td><td ></td><td ></td></tr><tr><td >Atria-Gr</td><td >jy.lecam@atria-gr.com</td><td >Jean Yves Le Cam</td><td >          Attaché commercial</td><td >06 16 32 03 58</td><td ></td><td ></td><td ></td></tr><tr><td >Keplercheuvreux</td><td >hsmatti@keplercheuvreux.com</td><td >Hamida Smatti  Kepler Cheuvreux</td><td ></td><td >+41 22 994 13 73</td><td ></td><td ></td><td ></td></tr><tr><td >La-Grande-Epicerie</td><td >fournisseurs@la-grande-epicerie.fr</td><td >Fournisseurs</td><td ></td><td >01 44 39 81 00</td><td ></td><td ></td><td ></td></tr><tr><td >Molinopeila</td><td >danilopeila@molinopeila.it</td><td >Danilo Peila</td><td ></td><td >04 72 63 48 22</td><td ></td><td ></td><td ></td></tr><tr><td >Episaveurs</td><td >w.patalin@episaveurs.fr</td><td >Patalin Willy</td><td >Comptable général</td><td >01 49 77 37 39</td><td >[&#39;01 49 77 66 46&#39;]</td><td ></td><td >w.patalin@episaveurs.fr www.episaveurs.fr</td></tr><tr><td >Aplexperu</td><td >gisasi@aplexperu.com</td><td >Gonzalo Isasi</td><td >President, CEO</td><td ></td><td ></td><td >Calle Monterrey 341, Of. 1004 Chacarilla, Lima 33 - Peru</td><td ></td></tr><tr><td >Foudecuisine</td><td >redaction@foudecuisine.fr</td><td >Claire Pichon</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Bnpparibas</td><td >stephanie.mathon@bnpparibas.com</td><td >Stephanie.Mathon@Bnpparibas.Com</td><td ></td><td >01 75 43 96 05</td><td >[&#39;06 67 18 55 03&#39;]</td><td ></td><td ></td></tr><tr><td >Biocoop</td><td >b.roger@biocoop.fr</td><td >Roger Benoît</td><td ></td><td >02 99 13 33 59</td><td >[&#39;06 70 09 86 05&#39;]</td><td >| 35 768 ST GREGOIRE Cedex             | [http://biocoop.eu/SignatureBiocoop/ |</td><td ></td></tr><tr><td >Ecocert</td><td >bettina.leresche@ecocert.com</td><td >Leresche Bettina</td><td ></td><td >06 48 60 02 56</td><td ></td><td ></td><td ></td></tr><tr><td ></td><td >viveznat@club-internet.fr</td><td >Malherbe Chantal</td><td >Site internet : www.vivez-nature.com</td><td >03 86 26 29 14</td><td ></td><td ></td><td ></td></tr><tr><td >Ecocert</td><td >Audrey.LORENZATO@ecocert.com</td><td >Lorenzato Audrey</td><td ></td><td >05 62 07 66 16</td><td ></td><td ></td><td ></td></tr><tr><td >Gastondiffusion</td><td >annececile.dufour@gastondiffusion.com</td><td >Anne-Cécile Dufour</td><td ></td><td >06 30 44 63 18</td><td >[&#39;01 56 92 28 61&#39;]</td><td >51 Rue du Faubourg Poissonnière 75009 PARIS</td><td ></td></tr><tr><td >Agrilob</td><td >lior@agrilob.com</td><td >Lior Levin</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >[New logo - Copie]</td><td >achats.sobreval@orange.fr</td><td >Service Achats</td><td >Responsable Achats</td><td ></td><td ></td><td >ZA des 4 Routes 22270 JUGON LES LACS</td><td >www.sobreval.com</td></tr><tr><td >Keial</td><td >jennifer@keial.fr</td><td >Jennifer - Keial</td><td >Commercial – KEIAL</td><td >01 75 43 96 05</td><td ></td><td >5 Rue Louis Fourrier, 93 300, Aubervilliers, France</td><td >www.keial.fr</td></tr><tr><td >Libello</td><td >cgc@libello.com</td><td >Varley</td><td >Délégué commercial</td><td ></td><td ></td><td >5 et 17 rue Révérend Père Louis Frolla MC 98000 Monaco</td><td ></td></tr><tr><td >Bionalia</td><td >mboussaid@bionalia.ma</td><td >Mohamed Boussaid</td><td >General Manager</td><td >+212 623-516377</td><td >[&#39;+212 5376-82344&#39;]</td><td >30, rue Aguelmane Sidi Ali, 10000, Agdal, Rabat</td><td ></td></tr><tr><td ></td><td >meurant.jocelyn@gmail.com</td><td >Jocelyn Meurant</td><td >Chef pâtissier Noglu</td><td ></td><td ></td><td >75002 Paris</td><td ></td></tr><tr><td ></td><td >khiderfatima91@yahoo.fr</td><td >Khider Fatima</td><td ></td><td ></td><td ></td><td ></td><td ></td></tr><tr><td >Nature-Aliments</td><td >ctrinquier@nature-aliments.com</td><td >C. Trinquier</td><td >[bloc signature logos 2]</td><td >02 40 73 65 97</td><td ></td><td ></td><td ></td></tr><tr><td >Kuehne-Nagel</td><td >sylvie.patin@kuehne-nagel.com</td><td >Patin  Sylvie / Kuehne + Nagel / Run Fo</td><td >Kuehne + Nagel Road</td><td ></td><td ></td><td >21/22 Chemin des Marais 94000 CRETEIL</td><td >www.kuehne-nagel.fr</td></tr><tr><td >Synabio</td><td >louisebrowaeys@synabio.com</td><td >Louisebrowaeys@Synabio.Com</td><td ></td><td >01 48 04 01 49</td><td >[&#39;06 03 70 49 56&#39;]</td><td >SYNABIO - 16 rue Montbrun, 75014 Paris</td><td >www.synabio.com</td></tr><tr><td >Greenweez</td><td >sgallay@greenweez.com</td><td >Sophie Gallay</td><td ></td><td >04 26 78 10 95</td><td ></td><td >Adr : 301 Route des Marais 74410 Saint-Jorioz</td><td ></td></tr><tr><td >Nature-Aliments</td><td >adv@nature-aliments.com</td><td >Adv Nature Et Aliments</td><td ></td><td >02 40 73 65 97</td><td ></td><td ></td><td ></td></tr><tr><td >Pronatura</td><td >valerie.tremblay@pronatura.com</td><td >Valérie Tremblay</td><td ></td><td ></td><td ></td><td ></td><td >|                                      | www.pronatura.com                    |</td></tr><tr><td >Avocat à la Cour</td><td >amacchetto.avocat@gmail.com</td><td >Alexis Macchetto</td><td ></td><td >01 44 29 21 21</td><td ></td><td >5, rue de Logelbach - 75017 PARIS</td><td ></td></tr><tr><td >Fp-Lp</td><td >eforgeas@fp-lp.fr</td><td >Forgeas Estelle</td><td >Chef de produits Epicerie</td><td >01 78 68 74 44</td><td ></td><td >123, Quai Jules Guesde 94400 Vitry-sur-Seine</td><td >_eforgeas@fp-lp.fr_</td></tr><tr><td >Développement de l’Art Culinaire</td><td >stephane.bour@club-internet.fr</td><td >Stephane Bour</td><td ></td><td ></td><td ></td><td >14 chemin Alhorga 64210 Arbonne (France)</td><td ></td></tr><tr><td >    Rue d&#39;Elleville</td><td >beebio@orange.fr</td><td >Ouchen Sarl - Beebio</td><td >    Gérant</td><td >09 67 11 26 30</td><td >[&#39;06 58 27 36 77&#39;]</td><td >    78 940 La Queue Lez-Yvelines</td><td ></td></tr></tbody>
+
+				</table>
+		</div>
+		</section>
+<!--END BLOCK CONTENT -->
+<!--BLOCK FOOTER -->
+</body>
+</html>
+<!--END BLOCK FOOTER -->

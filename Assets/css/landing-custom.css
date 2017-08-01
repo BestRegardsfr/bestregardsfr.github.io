@@ -1,11 +1,14 @@
+/* NAV*/
 
+.navbar{
+	margin-bottom: 0px;
+}
 
 /* REGISTER FORM*/
 
 	.col-sm-5 .section-content-inner {
 		width: 100%;
 	}
-
 	.panel-register {
 		border-color: #ccc;
 		-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);

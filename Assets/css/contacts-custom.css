@@ -1,0 +1,120 @@
+
+.container-fluid{
+  background-color:transparent;
+  padding: 10px;
+  margin:0px;
+}
+
+ /*User tools*/
+ 
+   .usertools{
+    display:inline;
+    margin:20px;
+    display: flex;
+  }
+  .usertools-btn {
+    padding:7px;
+    background-color: white;
+    color: #132291;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-color: #132291;
+    -webkit-transition: all 0.35s;
+      -moz-transition: all 0.35s;
+      transition: all 0.35s;
+  }
+
+  .initiallyHidden { display: none; }
+
+  .list-inline-item.toggle-vis.list-inline-item-primary {border-color: white}
+
+ /*Tableau*/
+
+
+  .backgroundtable{
+    background-color:rgba(255, 255, 255,1);
+    border-radius: 7px;
+    padding-bottom:15px; 
+    margin:15px;
+    box-shadow: inset 1px 1px 5px #222;
+  }
+
+.input[type="search"]{
+
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 1px 2px 1px rgba(0, 0, 0, .25); 
+    box-shadow: inset 1px 2px 1px rgba(0, 0, 0, .25); 
+}
+
+  .grille{
+    display:grid;
+  }
+
+  
+  .dropdown-menu>li>a {
+    transition: 0.3s;
+    font-weight:400;
+  }
+
+  .dropdown-menu>li>a:hover {
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    background-color: white;
+    transition: 0.3s;
+  }
+
+ #tableaufooter.row{
+    margin:auto;
+    padding-top:15px;
+    padding-bottom: 15px; 
+    border-top:1px solid rgba(0,0,0,0.5);
+    box-shadow: 4px 0px 5px 0px grey inset;
+    }
+
+.table>tbody>tr>td, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>td, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>thead>tr>th{border-color:#132291}
+
+.datatable{
+  border:1px;
+  border-collapse:inherit;
+
+}
+
+.sorting{color:rgb(51, 122, 183)}
+
+div.dataTables_wrapper div.dataTables_filter input {
+margin:0px!important;
+}
+
+.form-control.input-sm.input{
+	width:inherit;
+	margin-top:20px;
+}
+
+.dataTables_filter > label > i {
+  margin: 10px;
+  color:#132291;
+}
+
+.dataTables_info.form-control{
+	margin-top:20px!important;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #132291;
+    text-align: center;
+    background-color:white!important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
