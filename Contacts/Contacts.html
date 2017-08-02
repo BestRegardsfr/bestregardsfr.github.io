@@ -135,12 +135,12 @@
 	    					var table = $('#Tableau_contact').DataTable({
 	    							buttons: [
 	    							{extend:'csv', text:'Export CSV', className: 'btn-primary'}, 'excel','pdf'],
-	    							responsive:true,
+	    							"responsive":true,
 	    							"dom":'<f>t<"#tableaufooter.row"<"col-xs-7"pB><"col-xs-5 text-center"li>>',
 	    							"language": {url: 'https://cdn.datatables.net/plug-ins/1.10.13/i18n/French.json'},
 									"oLanguage": {"sSearch": '<i class="glyphicon glyphicon-search"></i>'},
 									"scrollX": true,
-									fixedHeader: true,
+									"fixedHeader": true,
 	    							 });
 
 								    $('li.toggle-vis').on( 'click', function (e) {
