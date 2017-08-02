@@ -20,7 +20,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,300italic,400italic,600italic" rel="stylesheet">
 
         <!-- MAIN CUSTOM CSS -->
-        <link href="../Assets/css/main-custom.css" rel="stylesheet">
+
 
         <!-- Script -->
 
@@ -29,6 +29,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
        
     <!-- BLOCK CUSTOM CSS CGU -->
+        <link href="../Assets/css/main-custom.css" rel="stylesheet">
         <link href="../Assets/css/cgu-custom.css" rel="stylesheet">
     <!-- END BLOCK CUSTOM CSS CGU -->
 
@@ -42,25 +43,32 @@
 <!-- END BLOCK HEAD -->
 
 <!-- BLOCK NAV MAIN -->
-        <nav id="Nav" class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-            <!-- BLOCK THIS NAV BUTTONS - GENERAL STATIC -->
-                <div class="navbar-header pull-left">  
-                    <a href="www.bestregards.pro"><img class="navbar-brand page-scroll" src="../Assets/img/logo Beta.svg" alt="Logo"></a>
-                </div>
-                <div class="navbar-header pull-right">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <button type="button" class="btn btn-default navbar-btn" href="www.bestregards.pro">CREER UN COMPTE</button>
-                        </li>                     
-                        <li>
-                            <a class="page-scroll" href="https://test.bestregards.pro/login">Connexion</a>
-                        </li>                        
-                    </ul>                    
-                </div>
-            <!-- BLOCK THIS NAV BUTTONS - GENERAL STATIC -->
-            </div> 
-        </nav>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid-nav">
+        <div class="navbar-header">
+          <a href="https://www.bestregards.pro"><img class="navbar-brand page-scroll" src="../Assets/img/logo Beta.svg" style="height:70px" alt="Logo"></a>
+          <button type="button" class="navbar-toggle btn-primary collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <!-- BLOCK THIS NAV BUTTONS - CGU -->
+            <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li>
+                    <button type="button" class="btn btn-default navbar-btn" href="www.bestregards.pro">CREER UN COMPTE</button>
+                </li>                
+                <li>
+                    <a class="navbar-right" href="https://test.bestregards.pro/login">Connexion</a> 
+                </li>
+
+              </ul>
+            </div>
+        <!-- END BLOCK THIS NAV BUTTONS - CGU -->
+    </div>
+    </nav>  
 <!-- END BLOCK NAV MAIN -->
 
 <!-- BLOCK CONTENT -->
